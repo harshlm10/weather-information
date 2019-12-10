@@ -13,6 +13,8 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+"""This File Holds The Url's That are Permitted In This Django App And it Also Contains 
+    Information About How Url's Will Be Navigated"""
 from django.contrib import admin
 from django.urls import path
 
@@ -23,4 +25,5 @@ urlpatterns = [
     path('',home_view, name='home'),
     path('admin/', admin.site.urls),
     path('add', add, name='add')
+    #Method is Called When User Enters The City Name
 ]
