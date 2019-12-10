@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,15 +16,15 @@
 
             function drawChart() {
               var data = google.visualization.arrayToDataTable([
-              ['Day', '{{day1}}', '{{day2}}', '{{day3}}', '{{day4}}', '{{day5}}'],
-              ['12 AM',  {{max_temp}}, {{day2_0}}, 27, 22, 30],
-              ['03 AM',  {{min_temp}}, {{day2_3}}, 45, 18, 45],
-              ['06 AM',  {{day1_6}}, {{day2_6}}, 23, 24, 25],
-              ['09 AM',  {{day1_9}}, {{day2_9}}, 12, 13, 14],
-              ['12 PM', {{day1_12}}, {{day2_12}}, 12, 12, 12],
-              ['03 PM', {{day1_15}}, {{day2_15}}, 12, 12, 12],
-              ['06 PM', {{day1_18}}, {{day2_18}}, 12, 12, 12],
-              ['09 PM', {{day1_21}}, {{day2_21}}, 12, 12, 12],
+              ['Day', '{{day1}}', '{{day2}}', '{{day3}}', '{{day4}}'],
+              ['12 AM',  {{day1_0}}, {{day2_0}}, {{day3_0}}, {{day4_0}}],
+              ['03 AM',  {{day1_3}}, {{day2_3}}, {{day3_3}}, {{day4_3}}],
+              ['06 AM',  {{day1_6}}, {{day2_6}}, {{day3_6}}, {{day4_6}}],
+              ['09 AM',  {{day1_9}}, {{day2_9}}, {{day3_9}}, {{day4_9}}],
+              ['12 PM', {{day1_12}}, {{day2_12}}, {{day3_12}}, {{day4_12}}],
+              ['03 PM', {{day1_15}}, {{day2_15}}, {{day3_15}}, {{day4_15}}],
+              ['06 PM', {{day1_18}}, {{day2_18}}, {{day3_18}}, {{day4_18}}],
+              ['09 PM', {{day1_21}}, {{day2_21}}, {{day3_21}}, {{day4_21}}],
               ]);
 
         var options = {
@@ -41,7 +42,9 @@
     <body>
     <center><h1><u>{{city}}</u></h1></center>
            <br><br>
+    <caption>Current Weather</caption>
     <table class="table table-hover">
+
     <thead>
     <tr>
       <th scope="col">Information</th>
@@ -98,6 +101,6 @@
      <br><br>
        <center><h1><u>Weather Forecast</u></h1></center>
         <br><br>
-      <div id="curve_chart" style="width: 900px; height: 500px"></div>
+     <center> <div id="curve_chart" style="width: 1000px; height: 650px"></div> </center>
     </body>
 </html>
