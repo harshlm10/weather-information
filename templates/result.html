@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Current Weather</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+          <script type="text/javascript">
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+              var data = google.visualization.arrayToDataTable([
+              ['Day', '{{day1}}', '{{day2}}', '{{day3}}', '{{day4}}', '{{day5}}'],
+              ['12 AM',  {{max_temp}}, {{day2_0}}, 27, 22, 30],
+              ['03 AM',  {{min_temp}}, {{day2_3}}, 45, 18, 45],
+              ['06 AM',  {{day1_6}}, {{day2_6}}, 23, 24, 25],
+              ['09 AM',  {{day1_9}}, {{day2_9}}, 12, 13, 14],
+              ['12 PM', {{day1_12}}, {{day2_12}}, 12, 12, 12],
+              ['03 PM', {{day1_15}}, {{day2_15}}, 12, 12, 12],
+              ['06 PM', {{day1_18}}, {{day2_18}}, 12, 12, 12],
+              ['09 PM', {{day1_21}}, {{day2_21}}, 12, 12, 12],
+              ]);
+
+        var options = {
+          title: 'Temperature',
+          curveType: 'function',
+          legend: { position: 'right' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+    </head>
+    <body>
+    <center><h1><u>{{city}}</u></h1></center>
+           <br><br>
+    <table class="table table-hover">
+    <thead>
+    <tr>
+      <th scope="col">Information</th>
+      <th scope="col">Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>Weather Description</td>
+      <td>{{weather}} <img src="http://openweathermap.org/img/wn/{{weather_icon}}.png" alt="{{weather}}"></td>
+    </tr>
+    <tr>
+      <td>Current Temperature</td>
+      <td>{{temprature}} &#8451</td>
+    </tr>
+    <tr>
+      <td >Maximum Temperature</td>
+      <td>{{max_temp}} &#8451</td>
+    </tr>
+    <tr>
+      <td >Minimum Temperature</td>
+      <td>{{min_temp}} &#8451</td>
+    </tr>
+    <tr>
+      <td>Humidity</td>
+      <td>{{humidity}} %</td>
+    </tr>
+    <tr>
+      <td>Sunrise</td>
+      <td>{{sunrise}}</td>
+    </tr>
+    <tr>
+      <td >Sunset</td>
+      <td>{{sunset}}</td>
+    </tr>
+    <tr>
+      <td >Cloud Cover</td>
+      <td>{{clouds}} %</td>
+    </tr>
+     <tr>
+      <td>Wind Speed</td>
+      <td>{{wind_speed}} Meter/Sec</td>
+    </tr>
+     <tr>
+      <td>Wind Direction</td>
+      <td>{{wind_degree}} Degree</td>
+    </tr>
+    <tr>
+      <td>Geo Cordinate</td>
+      <td>[{{latitude}}] [{{longitude}}]</td>
+    </tr>
+  </tbody>
+  </table>
+     <br><br>
+       <center><h1><u>Weather Forecast</u></h1></center>
+        <br><br>
+      <div id="curve_chart" style="width: 900px; height: 500px"></div>
+    </body>
+</html>
