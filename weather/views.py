@@ -1,13 +1,11 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-import requests
-import datetime
+import requests #For Requesting The Api End Point
+import datetime #To Convert The Unix Time To Current TIme
 # Create your views here.
 
 def home_view(request, *args, **krwgs):
-    print(request.user)
     return render(request, 'home.html', {})
-
+#renders The home.html Page
 
 def add(request):
     city = request.GET['city']
@@ -32,17 +30,16 @@ def add(request):
     humidity = data['main']['humidity']
     wind_speed = data['wind']['speed']
     wind_degree = data['wind']['deg']
-    day1 = forecast_data['list'][0]['dt_txt']
-    day2 = forecast_data['list'][6]['dt_txt']
-    day3 = forecast_data['list'][14]['dt_txt']
-    day4 = forecast_data['list'][22]['dt_txt']
-    day5 = forecast_data['list'][30]['dt_txt']
-    day1_6 = forecast_data['list'][0]['main']['temp']
-    day1_9 = forecast_data['list'][1]['main']['temp']
-    day1_12 = forecast_data['list'][2]['main']['temp']
-    day1_15 = forecast_data['list'][3]['main']['temp']
-    day1_18 = forecast_data['list'][4]['main']['temp']
-    day1_21 = forecast_data['list'][5]['main']['temp']
+
+    x = forecast_data['list'][0]['dt_txt']
+    x = x[11:13]
+    x = int(x)
+    x = x//3
+    y = 8-x
+    day1 = forecast_data['list'][y]['dt_txt']
+    day2 = forecast_data['list'][y+8]['dt_txt']
+    day3 = forecast_data['list'][y+16]['dt_txt']
+    day4 = forecast_data['list'][y+24]['dt_txt']
     weather = {
         'weather': weather,
         'weather_icon': weather_icon,
@@ -63,20 +60,37 @@ def add(request):
         'day2': day2[0:10],
         'day3': day3[0:10],
         'day4': day4[0:10],
-        'day5': day5[0:10],
-        'day1_6': day1_6,
-        'day1_9': day1_9,
-        'day1_12': day1_12,
-        'day1_15': day1_15,
-        'day1_18': day1_18,
-        'day1_21': day1_21,
-        'day2_0': forecast_data['list'][6]['main']['temp'],
-        'day2_3': forecast_data['list'][7]['main']['temp'],
-        'day2_6': forecast_data['list'][8]['main']['temp'],
-        'day2_9': forecast_data['list'][9]['main']['temp'],
-        'day2_12': forecast_data['list'][10]['main']['temp'],
-        'day2_15': forecast_data['list'][11]['main']['temp'],
-        'day2_18': forecast_data['list'][12]['main']['temp'],
-        'day2_21': forecast_data['list'][13]['main']['temp'],
+        'day1_0': forecast_data['list'][y]['main']['temp'],
+        'day1_3': forecast_data['list'][y+1]['main']['temp'],
+        'day1_6': forecast_data['list'][y+2]['main']['temp'],
+        'day1_9': forecast_data['list'][y+3]['main']['temp'],
+        'day1_12': forecast_data['list'][y+4]['main']['temp'],
+        'day1_15': forecast_data['list'][y+5]['main']['temp'],
+        'day1_18': forecast_data['list'][y+6]['main']['temp'],
+        'day1_21': forecast_data['list'][y+7]['main']['temp'],
+        'day2_0': forecast_data['list'][y+8]['main']['temp'],
+        'day2_3': forecast_data['list'][y+9]['main']['temp'],
+        'day2_6': forecast_data['list'][y+10]['main']['temp'],
+        'day2_9': forecast_data['list'][y+11]['main']['temp'],
+        'day2_12': forecast_data['list'][y+12]['main']['temp'],
+        'day2_15': forecast_data['list'][y+13]['main']['temp'],
+        'day2_18': forecast_data['list'][y+14]['main']['temp'],
+        'day2_21': forecast_data['list'][y+15]['main']['temp'],
+        'day3_0': forecast_data['list'][y+16]['main']['temp'],
+        'day3_3': forecast_data['list'][y+17]['main']['temp'],
+        'day3_6': forecast_data['list'][y+18]['main']['temp'],
+        'day3_9': forecast_data['list'][y+19]['main']['temp'],
+        'day3_12': forecast_data['list'][y+20]['main']['temp'],
+        'day3_15': forecast_data['list'][y+21]['main']['temp'],
+        'day3_18': forecast_data['list'][y+22]['main']['temp'],
+        'day3_21': forecast_data['list'][y+23]['main']['temp'],
+        'day4_0': forecast_data['list'][y+24]['main']['temp'],
+        'day4_3': forecast_data['list'][y+25]['main']['temp'],
+        'day4_6': forecast_data['list'][y+26]['main']['temp'],
+        'day4_9': forecast_data['list'][y+27]['main']['temp'],
+        'day4_12': forecast_data['list'][y+28]['main']['temp'],
+        'day4_15': forecast_data['list'][y+29]['main']['temp'],
+        'day4_18': forecast_data['list'][y+30]['main']['temp'],
+        'day4_21': forecast_data['list'][y+31]['main']['temp'],
     }
     return render(request, 'result.html', weather)
