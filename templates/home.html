@@ -1,4 +1,5 @@
 {% load static %}
+<!Doctype HTML>
 <html>
 
     <head>
@@ -9,7 +10,7 @@
             .header {
                 padding: 20px;
                 text-align: center;
-                color: Black;
+                color: blue;
                 text-decoration: underline;
                 font-size: 50px;
                 }
@@ -40,29 +41,29 @@
                 background-color: #FFF;
                  }
                 form > .button {
-  outline: 0;
-  background: none;
-  background-color: rgba(38, 50, 56, 0.8);
-  float: center;
-  height: 42px;
-  width: 42px;
-  text-align: center;
-  line-height: 42px;
-  border: 0;
-  color: #FFF;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: 16px;
-  text-rendering: auto;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-  -webkit-transition: background-color .4s ease;
-  transition: background-color .4s ease;
-  -webkit-border-radius: 0 4px 4px 0;
-  border-radius: 0 4px 4px 0;
-}
+                outline: 0;
+                background: none;
+                background-color: rgba(38, 50, 56, 0.8);
+                float: center;
+                height: 42px;
+                 width: 42px;
+                text-align: center;
+                line-height: 42px;
+                border: 0;
+                color: #FFF;
+                font: normal normal normal 14px/1 FontAwesome;
+                font-size: 16px;
+                 text-rendering: auto;
+                 text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+                -webkit-transition: background-color .4s ease;
+                   transition: background-color .4s ease;
+                   -webkit-border-radius: 0 4px 4px 0;
+                border-radius: 0 4px 4px 0;
+            }
 
-        form > .button:hover {
-  background-color: rgba(0, 150, 136, 0.8);
-}
+            form > .button:hover {
+         background-color: rgba(0, 150, 136, 0.8);
+            }
         </style>
     </head>
     <body background="{% static 'sunset.jpg' %}">
@@ -70,7 +71,7 @@
     <h1>WEATHER INFORMATION</h1>
     </div></center>
        <center> <form action="add">
-        <input type="text" class="textbox" placeholder="Enter Your City">
+        <input type="text" class="textbox" placeholder="Enter Your City" name="city">
         <input title="Search" value="" type="submit" class="button">
        </form></center>
     </body>
