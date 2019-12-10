@@ -10,7 +10,7 @@
             .header {
                 padding: 20px;
                 text-align: center;
-                color: blue;
+                color: black;
                 text-decoration: underline;
                 font-size: 50px;
                 }
@@ -25,13 +25,13 @@
 
                 form > .textbox {
                 outline: 0;
-                height: 42px;
-                width: 244px;
+                height: 50px;
+                width: 544px;
                 line-height: 42px;
                 padding: 0 16px;
                 background-color: rgba(255, 255, 255, 0.8);
                 color: #212121;
-                border: 0;
+                border: 15;
                 -webkit-border-radius: 4px 0 0 4px;
                 border-radius: 4px 0 0 4px;
                 }
@@ -45,11 +45,11 @@
                 background: none;
                 background-color: rgba(38, 50, 56, 0.8);
                 float: center;
-                height: 42px;
-                 width: 42px;
+                height: 60px;
+                width: 50px;
                 text-align: center;
                 line-height: 42px;
-                border: 0;
+                border: 10;
                 color: #FFF;
                 font: normal normal normal 14px/1 FontAwesome;
                 font-size: 16px;
@@ -62,8 +62,10 @@
             }
 
             form > .button:hover {
-         background-color: rgba(0, 150, 136, 0.8);
+            background-color: rgba(0, 150, 136, 0.8);
             }
+            form > .textbox:hover{
+            background-color: lightblue;}
         </style>
     </head>
     <body background="{% static 'sunset.jpg' %}">
