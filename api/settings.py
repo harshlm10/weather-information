@@ -25,7 +25,7 @@ SECRET_KEY = '*5=2j0n(*gr*_1c-v#0h)zbwf3@qtc4o3)7j^-to1870al)&5@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'weather'
+    'weather' #Name Of My Django App
 ]
 
 MIDDLEWARE = [
@@ -122,4 +122,4 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
+STATIC_ROOT = os.path.join(BASE_DIR, 'assets') #holds The Static Files Used For Styling
