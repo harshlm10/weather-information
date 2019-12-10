@@ -30,6 +30,8 @@
         var options = {
           title: 'Temperature',
           curveType: 'function',
+           backgroundColor: 'cyan',
+           'is3D':true,
           legend: { position: 'right' }
         };
 
@@ -38,11 +40,15 @@
         chart.draw(data, options);
       }
     </script>
+        <style>
+            body{
+            background-color: lightblue;
+            }
+        </style>
     </head>
     <body>
     <center><h1><u>{{city}}</u></h1></center>
            <br><br>
-    <caption>Current Weather</caption>
     <table class="table table-hover">
 
     <thead>
@@ -101,6 +107,6 @@
      <br><br>
        <center><h1><u>Weather Forecast</u></h1></center>
         <br><br>
-     <center> <div id="curve_chart" style="width: 1000px; height: 650px"></div> </center>
+     <center> <div class = "graph" id="curve_chart" style="width: 1000px; height: 650px"></div> </center>
     </body>
 </html>
